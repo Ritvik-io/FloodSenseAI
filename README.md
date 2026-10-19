@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FloodSense AI: Satellite-Based Flood Mapping and Impact Assessment
 
 FloodSense AI is an end-to-end, research-grade geospatial machine learning project designed to detect and segment **observed flood inundation** from Sentinel-1 Synthetic Aperture Radar (SAR) imagery and aligned geographic covariates.
@@ -112,3 +113,7 @@ The web dashboard will be available at: `http://localhost:3000`
 - **No Data Leakage:** Splits are partitioned strictly by flood event or scene ID—never by randomly shuffling overlapping spatial patches.
 - **Metric Integrity:** Precision, Recall, F1, and IoU (Jaccard Index) are calculated strictly excluding invalid/no-data pixels.
 - **Responsible Impact Assessment:** Inundated surface area is calculated based on exact pixel spatial resolution and CRS projection properties.
+=======
+# FloodSenseAI
+Satellite-based flood inundation mapping using Sentinel-1 SAR imagery and U-Net deep learning, with geospatial visualization, flood-area estimation, and an interactive web dashboard.
+>>>>>>> 251bd52494ee8d1d85c224a7dcad1506b090fcb4
