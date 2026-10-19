@@ -1,0 +1,23 @@
+{
+  "checkpoint": "C:\\Users\\Ritvik\\Fllod-Sense AI\\models\\checkpoints\\unet_baseline_best.pt",
+  "split_csv": "flood_bolivia_data.csv",
+  "sample_count": 15,
+  "decision_threshold": 0.5,
+  "loss": 0.5160477757453918,
+  "metrics": {
+    "threshold": 0.5,
+    "tp": 169625,
+    "fp": 59078,
+    "fn": 252325,
+    "tn": 2343406,
+    "precision": 0.7416824440431152,
+    "recall": 0.4020026069439412,
+    "f1": 0.5213992666347514,
+    "iou": 0.3526302003209719,
+    "accuracy": 0.8897467598817997,
+    "total_valid_pixels": 2824434,
+    "total_pixels": 3932160,
+    "valid_fraction": 0.7182907104492188,
+    "loss": 0.5160477757453918
+  }
+}

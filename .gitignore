@@ -1,0 +1,103 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.obj
+*.pyd
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Large datasets & raw data (Never commit raw rasters/masks)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/masks/*
+!data/masks/.gitkeep
+data/samples/*
+!data/samples/.gitkeep
+
+# Model weights & checkpoints (Never commit large .pt / .pth / .onnx / .pkl files)
+models/checkpoints/*
+!models/checkpoints/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.h5
+*.ckpt
+
+# Experiment logs and temporary files
+experiments/runs/*
+!experiments/runs/.gitkeep
+*.log
+.coverage
+htmlcov/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Frontend dependencies and builds
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+.next/
+out/
+node_modules/
+
+# Secrets and local configurations
+.env
+.env.local
+.env.*.local
+*.secret
+*.pem
+*.key
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+# Local environment variables
+.env.*
+!.env.example
+
+# Local dataset split files (if they contain dataset-specific metadata)
+data/splits/
+
+# Generated reports and temporary outputs
+reports/figures/
+*.tif
+*.tiff
+
+# Local IDE settings
+.vscode/
+.idea/

@@ -1,0 +1,23 @@
+{
+  "checkpoint": "C:\\Users\\Ritvik\\Fllod-Sense AI\\models\\checkpoints\\unet_baseline_best.pt",
+  "split_csv": "flood_valid_data.csv",
+  "sample_count": 89,
+  "decision_threshold": 0.5,
+  "loss": 0.5373379836479822,
+  "metrics": {
+    "threshold": 0.5,
+    "tp": 1119952,
+    "fp": 1040006,
+    "fn": 501586,
+    "tn": 17612610,
+    "precision": 0.5185063783647621,
+    "recall": 0.6906726823546492,
+    "f1": 0.5923327649892575,
+    "iou": 0.42079033823975703,
+    "accuracy": 0.9239626965445754,
+    "total_valid_pixels": 20274154,
+    "total_pixels": 23330816,
+    "valid_fraction": 0.8689860654680917,
+    "loss": 0.5373379836479822
+  }
+}

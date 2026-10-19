@@ -1,0 +1,67 @@
+# ==============================================================================
+# FloodSense AI - Master Configuration
+# Satellite-Based Flood Mapping and Impact Assessment
+# ==============================================================================
+
+project:
+  name: "FloodSense AI"
+  version: "1.0.0"
+  description: "Satellite-based flood inundation detection using SAR and auxiliary geospatial data"
+  seed: 42
+
+system:
+  device: "auto"        # "auto", "cuda", or "cpu"
+  num_workers: 2        # DataLoader subprocesses (Windows-friendly)
+  pin_memory: true      # Speed up host-to-device memory transfer on GPU
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  masks_data: "data/masks"
+  sample_data: "data/samples"
+  checkpoints: "models/checkpoints"
+  experiments: "experiments/runs"
+  reports: "reports"
+  figures: "reports/figures"
+
+dataset:
+  name: "SenFloods11"
+  default_patch_size: 256
+  # Primary SAR polarizations available in Sentinel-1 GRD
+  sar_channels: ["VV", "VH"]
+  # Optional auxiliary bands (only when aligned geocoded rasters are available)
+  aux_channels: ["elevation"]
+  # Strict geospatial splitting strategy to prevent data leakage across neighbouring tiles
+  split_strategy: "flood_event" # "flood_event", "region", or "scene"
+  train_split: 0.70
+  val_split: 0.15
+  test_split: 0.15
+  nodata_value: -1              # Standard nodata mask flag in SenFloods11
+  water_threshold_db: -16.0     # Default dB threshold for classical SAR thresholding baseline
+
+training:
+  batch_size: 16
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+  epochs: 30
+  early_stopping_patience: 7
+  loss_function: "bce_dice"     # Options: "bce", "dice", "bce_dice", "focal"
+  bce_weight: 0.5
+  dice_weight: 0.5
+
+model:
+  architecture: "UNet"
+  in_channels: 2                # 2 for SAR-only (VV, VH), 3 for SAR + Elevation
+  out_channels: 1               # Binary flood prediction (probability of inundation)
+  features: [32, 64, 128, 256, 512]
+  dropout: 0.2
+
+evaluation:
+  decision_threshold: 0.5
+  metrics:
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "iou"                     # Intersection over Union / Jaccard Index
+    - "confusion_matrix"
+    - "inundated_area_km2"

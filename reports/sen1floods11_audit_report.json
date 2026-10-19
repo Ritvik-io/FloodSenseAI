@@ -1,0 +1,40 @@
+{
+  "splits": {
+    "flood_train_data.csv": 252,
+    "flood_valid_data.csv": 89,
+    "flood_test_data.csv": 90,
+    "flood_bolivia_data.csv": 15
+  },
+  "total_pairs_checked": 446,
+  "passed_pairs": 446,
+  "failed_pairs": 0,
+  "checks": {
+    "file_existence": true,
+    "dimensions_512x512": true,
+    "s1_bands_vv_vh": true,
+    "s1_dtype_float32": true,
+    "label_values_valid": true,
+    "crs_match": true,
+    "affine_transform_match": true
+  },
+  "pixel_statistics": {
+    "total_pixels": 116916224,
+    "nodata_pixels_minus_1": 15932910,
+    "land_pixels_0": 90277709,
+    "water_pixels_1": 10705605,
+    "permanent_water_pixels": 3062228,
+    "temporary_flood_pixels": 7643377
+  },
+  "sar_statistics": {
+    "vv_min_db": -89.78575897216797,
+    "vv_max_db": 36.83202362060547,
+    "vh_min_db": -103.87602996826172,
+    "vh_max_db": 17.376384735107422,
+    "vv_sum": -1193757245.96875,
+    "vh_sum": -1980112780.25,
+    "valid_pixel_count": 114404519,
+    "nan_pixel_count": 2511705
+  },
+  "failures": [],
+  "warnings": []
+}
